@@ -1,4 +1,4 @@
-# Payment---SQL
+# Payment-SQLfor Data Analysis
  Use SQL queries to extract and analyze data from a database
 -- 1. Create the 'payment' table
 CREATE TABLE payment (
