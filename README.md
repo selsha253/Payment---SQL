@@ -1,7 +1,5 @@
 # Payment---SQL
- Use SQL queries to extract and analyze data from a database.
--- Task 4: SQL for Data Analysis Project
--- =====================================
+ Use SQL queries to extract and analyze data from a database
 -- 1. Create the 'payment' table
 CREATE TABLE payment (
     payment_id INTEGER PRIMARY KEY,
