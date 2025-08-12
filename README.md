@@ -1,4 +1,4 @@
-# Payment-SQLfor Data Analysis
+# SQLfor Data Analysis
  Use SQL queries to extract and analyze data from a database
 -- 1. Create the 'payment' table
 CREATE TABLE payment (
@@ -28,14 +28,10 @@ LIMIT 10;
 
 
 -- Total amount paid by each customer
-
-
 SELECT customer_id, SUM(amount) AS total_spent
 FROM payment
 GROUP BY customer_id
 ORDER BY total_spent DESC; 
-
-
 
 -- b) JOINS (example, if customer table exists)
 SELECT p1.payment_id AS payment_1,
@@ -49,8 +45,6 @@ JOIN payment p2
  AND p1.payment_id < p2.payment_id
 ORDER BY p1.payment_date;
 
-
-
 -- c) Subqueries
 SELECT customer_id, SUM(amount) AS total_paid
 FROM payment
@@ -62,8 +56,6 @@ HAVING SUM(amount) > (
         FROM payment
         GROUP BY customer_id) sub);
 
-
-
 -- d) Aggregate Functions
 SELECT DATE(payment_date) AS pay_date,
        SUM(amount) AS total_revenue,
@@ -72,16 +64,11 @@ FROM payment
 GROUP BY pay_date
 ORDER BY pay_date;
 
-
-
 -- e) Create Views
 CREATE OR REPLACE VIEW customer_total_spend AS
 SELECT customer_id, SUM(amount) AS total_spent
 FROM payment
 GROUP BY customer_id;
-
-
-
 -- f) Optimize with Index
 CREATE INDEX idx_payment_date ON payment(payment_date);
 
